@@ -1,0 +1,158 @@
+<div class="page-width">
+  <div class="Promo">
+    <div class="PromoBlock">
+      <div class="PromoIMG">
+        <img src="https://cdn.shopify.com/s/files/1/0744/5479/4529/files/PromoIMG.png?v=1681589025">
+      </div>
+      <div class="PromoInfo">
+        <h2>{{ section.settings.Heading | escape }}</h2>
+        {{ section.settings.text }}
+        <a class="ThreeD--button OrangeShadow WhiteBG" href="#">Details</a>
+      </div>
+    </div>
+
+    <div class="FeaturesBlock">
+      {%- if section.blocks.size > 0 -%}
+        {%- for block in section.blocks -%}
+          <div class="Feature">
+            {%- if block.settings.IconLink != blank -%}
+              <img src="{{ block.settings.IconLink }}">
+            {%- endif -%}
+
+            {%- if block.settings.Title != blank -%}
+              <h4>{{ block.settings.Title }}</h4>
+            {%- endif -%}
+
+            {%- if block.settings.Desc != blank -%}
+              <p>
+                {{ block.settings.Desc }}
+              </p>
+            {%- endif -%}
+          </div>
+        {%- endfor -%}
+      {%- endif -%}
+    </div>
+  </div>
+</div>
+
+{%- style -%}
+  .Promo {
+    display: flex;
+    gap: 100px;
+  }
+  .PromoBlock {
+    background: #FF6400;
+    color: #fff;
+    border: 2px solid #191919;
+    display: flex;
+    align-items: center;
+    gap: 100px;
+    width: 60%;
+  }
+  .PromoIMG {
+    width: 40%;
+    margin-top: -175px;
+    margin-bottom: -60px;
+  }
+  .PromoIMG img {
+    margin-left: -100px;
+  }
+  .PromoInfo {
+    width: 40%;
+    padding: 100px 0px 60px;
+  }
+  .PromoInfo h2 {
+    font-weight: 600;
+    color: #fff;
+    font-size: 40px;
+    margin-top: 0px;
+    margin-bottom: 5px;
+  }
+  .PromoInfo p {
+    font-size: 19px;
+  }
+
+  .FeaturesBlock {
+    display: grid;
+    grid-template-columns: repeat(2,1fr);
+    column-gap: 60px;
+    width: 40%;
+  }
+  .Feature h4 {
+    font-weight: 700;
+    font-size: 28px;
+    margin-bottom: 0px;
+    margin-top: 10px;
+  }
+  .Feature p {
+
+  }
+{%- endstyle -%}
+
+{% schema %}
+{
+  "name": "PromoBlock",
+  "class": "index-section",
+  "max_blocks": 4,
+  "settings": [
+    {
+      "type": "text",
+      "id": "Heading",
+      "label": "Heading",
+      "default": "Grab Your Starter Box"
+    },
+    {
+      "type": "richtext",
+      "id": "text",
+      "label": "Text",
+      "default": "<p>Interested in testing the flavors? Grab a Starter Box including all of our flavours to see which one fits your style and taste!</p>"
+    }
+  ],
+  "blocks": [
+    {
+      "type": "feature",
+      "name": "Feature",
+      "settings": [
+        {
+          "type": "text",
+          "id": "Title",
+          "label": "Title",
+          "default": "Made with Love"
+        },
+        {
+          "type": "richtext",
+          "id": "Desc",
+          "label": "Text",
+          "default": "<p>Treats created for you to enjoy & cheerish</p>"
+        },
+        {
+        "type": "text",
+         "id": "IconLink",
+         "label": "Icon Link",
+         "default": "https://cdn.shopify.com/s/files/1/0744/5479/4529/files/Love.svg"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Feature",
+      "category": "Text",
+      "blocks": [
+        {
+          "type": "feature"
+        },
+        {
+          "type": "feature"
+        },
+        {
+          "type": "feature"
+        },
+        {
+          "type": "feature"
+        }
+      ]
+    }
+  ]
+}
+{% endschema %}

@@ -1,0 +1,81 @@
+{
+  "name": "t:sections.footer.name",
+  "type": "footer",
+  "sections": {
+    "b08da6c4-e852-4dc2-9b8d-bf415b007bb0": {
+      "type": "newsletter",
+      "blocks": {
+        "sections--18617704907041__b08da6c4-e852-4dc2-9b8d-bf415b007bb0-16844374749b5edb7a-0": {
+          "type": "heading",
+          "settings": {
+            "heading": "<strong>Get 10% OFF your first Order<\/strong>",
+            "heading_size": "h2"
+          }
+        },
+        "sections--18617704907041__b08da6c4-e852-4dc2-9b8d-bf415b007bb0-16844374749b5edb7a-1": {
+          "type": "paragraph",
+          "settings": {
+            "text": "<p>Save 10% on your first order by and get notified about the latest news and updates. No spam, we promise!<\/p>"
+          }
+        },
+        "sections--18617704907041__b08da6c4-e852-4dc2-9b8d-bf415b007bb0-16844374749b5edb7a-2": {
+          "type": "email_form",
+          "settings": {
+          }
+        }
+      },
+      "block_order": [
+        "sections--18617704907041__b08da6c4-e852-4dc2-9b8d-bf415b007bb0-16844374749b5edb7a-0",
+        "sections--18617704907041__b08da6c4-e852-4dc2-9b8d-bf415b007bb0-16844374749b5edb7a-1",
+        "sections--18617704907041__b08da6c4-e852-4dc2-9b8d-bf415b007bb0-16844374749b5edb7a-2"
+      ],
+      "settings": {
+        "color_scheme": "inverse",
+        "full_width": true,
+        "padding_top": 40,
+        "padding_bottom": 16
+      }
+    },
+    "footer": {
+      "type": "footer",
+      "blocks": {
+        "1eb11a7d-3e0d-456b-8ead-78162f41f4a5": {
+          "type": "link_list",
+          "settings": {
+            "heading": "Quick links",
+            "menu": "footer"
+          }
+        },
+        "38b47afb-0875-43f7-b70d-7ee5a58e7918": {
+          "type": "link_list",
+          "settings": {
+            "heading": "Customer Care",
+            "menu": "customer-care"
+          }
+        }
+      },
+      "block_order": [
+        "1eb11a7d-3e0d-456b-8ead-78162f41f4a5",
+        "38b47afb-0875-43f7-b70d-7ee5a58e7918"
+      ],
+      "settings": {
+        "color_scheme": "inverse",
+        "newsletter_enable": false,
+        "newsletter_heading": "",
+        "enable_follow_on_shop": false,
+        "show_social": true,
+        "enable_country_selector": true,
+        "enable_language_selector": true,
+        "payment_enable": true,
+        "show_policy": false,
+        "margin_top": 0,
+        "padding_top": 36,
+        "padding_bottom": 36
+      }
+    }
+  },
+  "order": [
+    "b08da6c4-e852-4dc2-9b8d-bf415b007bb0",
+    "footer"
+  ]
+}

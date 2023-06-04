@@ -1,0 +1,55 @@
+<div class="CustomBox">
+  <div class="page-width">
+    <div class="InfoBlock">
+      <h1>{{ section.settings.section_title }}</h1>
+      <p>{{ section.settings.text }}</p>
+    </div>
+
+    <div class="BoxBlock">
+      <div class="LeftItems"></div>
+      <div class="CustomBox">
+        <h2>Treats from around the World</h2>
+        <img src="https://cdn.shopify.com/s/files/1/0744/5479/4529/files/SingleBox.png?v=1681637332">
+      </div>
+      <div class="RightItems"></div>
+    </div>
+  </div>
+</div>
+
+{%- style -%}
+  .CustomBox {
+      background: var(--StrongFiller);
+      padding: 100px;
+      text-align: center;
+  }
+  .InfoBlock p {
+    width: 80%;
+    margin: 0px auto;
+  }
+{%- endstyle -%}
+
+{% schema %}
+{
+  "name": "Custom Box",
+  "settings": [
+    {
+      "type": "text",
+      "id": "section_title",
+      "label": "Title",
+      "default": "Build your Custom Box"
+    },
+    {
+      "type": "richtext",
+      "id": "text",
+      "label": "Text",
+      "default": "<p>Lorem ipsum dolor sit amet consectetur. Dapibus tincidunt convallis semper ullamcorper. Pharetra convallis nibh netus sed hac.</p>"
+    }
+  ],
+  "presets": [
+    {
+      "name": "CustomBox",
+      "category": "Text"
+    }
+  ]
+}
+{% endschema %}

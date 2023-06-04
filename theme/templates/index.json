@@ -1,0 +1,312 @@
+{
+  "sections": {
+    "image_banner": {
+      "type": "image-banner",
+      "blocks": {
+        "heading": {
+          "type": "heading",
+          "settings": {
+            "heading": "<strong>Exotic Snacks from Around the World<\/strong>",
+            "heading_size": "h0"
+          }
+        },
+        "50d62189-9c29-4046-9f40-b622c77e46bf": {
+          "type": "text",
+          "settings": {
+            "text": "Lorem ipsum dolor sit amet consectetur. Dapibus tincidunt convallis semper ullamcorper. Pharetra convallis nibh netus sed hac.",
+            "text_style": "body"
+          }
+        },
+        "button": {
+          "type": "buttons",
+          "settings": {
+            "button_label_1": "BROWSE TREATS",
+            "button_link_1": "shopify:\/\/collections\/pre-made-boxes",
+            "button_style_secondary_1": true,
+            "button_label_2": "",
+            "button_link_2": "",
+            "button_style_secondary_2": false
+          }
+        }
+      },
+      "block_order": [
+        "heading",
+        "50d62189-9c29-4046-9f40-b622c77e46bf",
+        "button"
+      ],
+      "custom_css": [
+        ".banner__media {background: transparent;}",
+        ".banner__box,h2 {color: #000;}",
+        ".button.button--secondary {color: #000; font-weight: bold; border: 2px solid;}"
+      ],
+      "settings": {
+        "image": "shopify:\/\/shop_images\/RedImage_430x_ecdf5b36-321f-4588-8a34-c020471ac7bd.webp",
+        "image_3": "shopify:\/\/shop_images\/Group_4.png",
+        "image_overlay_opacity": 0,
+        "image_height": "adapt",
+        "desktop_content_position": "middle-left",
+        "show_text_box": false,
+        "desktop_content_alignment": "left",
+        "color_scheme": "background-1",
+        "image_behavior": "none",
+        "mobile_content_alignment": "center",
+        "stack_images_on_mobile": false,
+        "show_text_below": false
+      }
+    },
+    "46192c6a-cf82-4b58-957d-353eeaf4692a": {
+      "type": "featured-collection",
+      "settings": {
+        "title": "<strong>Beaver's Favourites<\/strong>",
+        "heading_size": "h1",
+        "description": "",
+        "show_description": false,
+        "description_style": "body",
+        "collection": "create-your-box",
+        "products_to_show": 8,
+        "columns_desktop": 4,
+        "full_width": false,
+        "show_view_all": true,
+        "view_all_style": "solid",
+        "enable_desktop_slider": false,
+        "color_scheme": "background-1",
+        "image_ratio": "adapt",
+        "show_secondary_image": false,
+        "show_vendor": false,
+        "show_rating": false,
+        "enable_quick_add": false,
+        "columns_mobile": "2",
+        "swipe_on_mobile": false,
+        "padding_top": 36,
+        "padding_bottom": 36
+      }
+    },
+    "665e54a2-5e9f-4f2a-9563-6bbf664d7fb6": {
+      "type": "PromoBlock",
+      "blocks": {
+        "template--18617704448289__665e54a2-5e9f-4f2a-9563-6bbf664d7fb6-16815876919ddd872c-0": {
+          "type": "feature",
+          "settings": {
+            "Title": "Made with Love",
+            "Desc": "<p>Treats created for you to enjoy & cheerish<\/p>",
+            "IconLink": "https:\/\/cdn.shopify.com\/s\/files\/1\/0744\/5479\/4529\/files\/Love.svg"
+          }
+        },
+        "template--18617704448289__665e54a2-5e9f-4f2a-9563-6bbf664d7fb6-16815876919ddd872c-1": {
+          "type": "feature",
+          "settings": {
+            "Title": "Quality not Quantity",
+            "Desc": "<p>We carefully pick the best ingredients<\/p>",
+            "IconLink": "https:\/\/cdn.shopify.com\/s\/files\/1\/0744\/5479\/4529\/files\/Quantity.svg?v=1681636428"
+          }
+        },
+        "template--18617704448289__665e54a2-5e9f-4f2a-9563-6bbf664d7fb6-16815876919ddd872c-2": {
+          "type": "feature",
+          "settings": {
+            "Title": "Blazing Fast Delivery",
+            "Desc": "<p>We deliver the treats in 24-48h in US<\/p>",
+            "IconLink": "https:\/\/cdn.shopify.com\/s\/files\/1\/0744\/5479\/4529\/files\/Blazing.svg?v=1681636428"
+          }
+        },
+        "template--18617704448289__665e54a2-5e9f-4f2a-9563-6bbf664d7fb6-16815876919ddd872c-3": {
+          "type": "feature",
+          "settings": {
+            "Title": "Support that Cares",
+            "Desc": "<p>Have an issue? We'll happily help<\/p>",
+            "IconLink": "https:\/\/cdn.shopify.com\/s\/files\/1\/0744\/5479\/4529\/files\/Support.svg?v=1681636428"
+          }
+        }
+      },
+      "block_order": [
+        "template--18617704448289__665e54a2-5e9f-4f2a-9563-6bbf664d7fb6-16815876919ddd872c-0",
+        "template--18617704448289__665e54a2-5e9f-4f2a-9563-6bbf664d7fb6-16815876919ddd872c-1",
+        "template--18617704448289__665e54a2-5e9f-4f2a-9563-6bbf664d7fb6-16815876919ddd872c-2",
+        "template--18617704448289__665e54a2-5e9f-4f2a-9563-6bbf664d7fb6-16815876919ddd872c-3"
+      ],
+      "settings": {
+        "Heading": "Grab Your Starter Box",
+        "text": "<p>Interested in testing the flavors? Grab a Starter Box including all of our flavours to see which one fits your style and taste!<\/p>"
+      }
+    },
+    "237a4475-c0e9-4821-9ee2-1713e90278be": {
+      "type": "BuildUrBox",
+      "settings": {
+        "section_title": "Build your Custom Box",
+        "text": "<p>Lorem ipsum dolor sit amet consectetur. Dapibus tincidunt convallis semper ullamcorper. Pharetra convallis nibh netus sed hac.<\/p>"
+      }
+    },
+    "4c2161c0-11eb-4a40-8dc9-a11be435a766": {
+      "type": "featured-collection",
+      "custom_css": [
+        "h2 {color: #000; text-align: center;}",
+        "span {color: #000;}",
+        ".card__inner {border: 1px solid #000;}"
+      ],
+      "settings": {
+        "title": "<strong>New in the Lodge<\/strong>",
+        "heading_size": "h1",
+        "description": "",
+        "show_description": false,
+        "description_style": "body",
+        "collection": "",
+        "products_to_show": 4,
+        "columns_desktop": 4,
+        "full_width": false,
+        "show_view_all": true,
+        "view_all_style": "solid",
+        "enable_desktop_slider": false,
+        "color_scheme": "accent-2",
+        "image_ratio": "adapt",
+        "show_secondary_image": false,
+        "show_vendor": false,
+        "show_rating": false,
+        "enable_quick_add": false,
+        "columns_mobile": "2",
+        "swipe_on_mobile": false,
+        "padding_top": 36,
+        "padding_bottom": 36
+      }
+    },
+    "bfb8387e-168e-4065-8780-a2e825919f04": {
+      "type": "image-with-text",
+      "blocks": {
+        "template--18617704448289__bfb8387e-168e-4065-8780-a2e825919f04-1681484561298775ca-0": {
+          "type": "heading",
+          "settings": {
+            "heading": "<strong>Beaver's Magazine<\/strong>",
+            "heading_size": "h1"
+          }
+        },
+        "template--18617704448289__bfb8387e-168e-4065-8780-a2e825919f04-1681484561298775ca-1": {
+          "type": "text",
+          "settings": {
+            "text": "<p>Lorem ipsum dolor sit amet consectetur. Dapibus tincidunt convallis semper ullamcorper. Pharetra convallis nibh netus sed hac.<\/p>",
+            "text_style": "body"
+          }
+        },
+        "template--18617704448289__bfb8387e-168e-4065-8780-a2e825919f04-1681484561298775ca-2": {
+          "type": "button",
+          "settings": {
+            "button_label": "BROWSE ARTICLES",
+            "button_link": ""
+          }
+        }
+      },
+      "block_order": [
+        "template--18617704448289__bfb8387e-168e-4065-8780-a2e825919f04-1681484561298775ca-0",
+        "template--18617704448289__bfb8387e-168e-4065-8780-a2e825919f04-1681484561298775ca-1",
+        "template--18617704448289__bfb8387e-168e-4065-8780-a2e825919f04-1681484561298775ca-2"
+      ],
+      "custom_css": [
+
+      ],
+      "settings": {
+        "height": "adapt",
+        "desktop_image_width": "medium",
+        "layout": "text_first",
+        "desktop_content_position": "top",
+        "desktop_content_alignment": "left",
+        "content_layout": "no-overlap",
+        "color_scheme": "background-1",
+        "image_behavior": "none",
+        "mobile_content_alignment": "left",
+        "padding_top": 36,
+        "padding_bottom": 36
+      }
+    },
+    "d0981f63-a84e-4e16-be30-9557b81f2f84": {
+      "type": "rich-text",
+      "blocks": {
+        "template--18617704448289__d0981f63-a84e-4e16-be30-9557b81f2f84-16814841847774fa1f-0": {
+          "type": "heading",
+          "settings": {
+            "heading": "<strong>Who let the Beavers out?<\/strong>",
+            "heading_size": "h0"
+          }
+        },
+        "template--18617704448289__d0981f63-a84e-4e16-be30-9557b81f2f84-16814841847774fa1f-1": {
+          "type": "text",
+          "settings": {
+            "text": "<p>Follow us on instagram for exclusive promotion and product launches along with cool news and tasty images for you to enjoy on your instagram feed <strong>@beavertreats<\/strong><\/p>"
+          }
+        }
+      },
+      "block_order": [
+        "template--18617704448289__d0981f63-a84e-4e16-be30-9557b81f2f84-16814841847774fa1f-0",
+        "template--18617704448289__d0981f63-a84e-4e16-be30-9557b81f2f84-16814841847774fa1f-1"
+      ],
+      "settings": {
+        "desktop_content_position": "center",
+        "content_alignment": "center",
+        "color_scheme": "background-1",
+        "full_width": true,
+        "padding_top": 40,
+        "padding_bottom": 52
+      }
+    },
+    "5870ac58-a281-40c5-af91-6904a42d5dfd": {
+      "type": "collection-list",
+      "blocks": {
+        "template--18617704448289__5870ac58-a281-40c5-af91-6904a42d5dfd-16814847028179805e-0": {
+          "type": "featured_collection",
+          "settings": {
+            "collection": ""
+          }
+        },
+        "c3f6436f-9193-4af3-be4e-17776b9b1187": {
+          "type": "featured_collection",
+          "settings": {
+            "collection": ""
+          }
+        },
+        "7ed3af16-26fa-4ef1-9f04-65fa0bc5b0a1": {
+          "type": "featured_collection",
+          "settings": {
+            "collection": ""
+          }
+        },
+        "template--18617704448289__5870ac58-a281-40c5-af91-6904a42d5dfd-16814847028179805e-1": {
+          "type": "featured_collection",
+          "settings": {
+            "collection": ""
+          }
+        },
+        "template--18617704448289__5870ac58-a281-40c5-af91-6904a42d5dfd-16814847028179805e-2": {
+          "type": "featured_collection",
+          "settings": {
+            "collection": ""
+          }
+        }
+      },
+      "block_order": [
+        "template--18617704448289__5870ac58-a281-40c5-af91-6904a42d5dfd-16814847028179805e-0",
+        "c3f6436f-9193-4af3-be4e-17776b9b1187",
+        "7ed3af16-26fa-4ef1-9f04-65fa0bc5b0a1",
+        "template--18617704448289__5870ac58-a281-40c5-af91-6904a42d5dfd-16814847028179805e-1",
+        "template--18617704448289__5870ac58-a281-40c5-af91-6904a42d5dfd-16814847028179805e-2"
+      ],
+      "settings": {
+        "title": "",
+        "heading_size": "h1",
+        "image_ratio": "square",
+        "columns_desktop": 5,
+        "color_scheme": "background-1",
+        "show_view_all": false,
+        "columns_mobile": "1",
+        "swipe_on_mobile": false,
+        "padding_top": 0,
+        "padding_bottom": 36
+      }
+    }
+  },
+  "order": [
+    "image_banner",
+    "46192c6a-cf82-4b58-957d-353eeaf4692a",
+    "665e54a2-5e9f-4f2a-9563-6bbf664d7fb6",
+    "237a4475-c0e9-4821-9ee2-1713e90278be",
+    "4c2161c0-11eb-4a40-8dc9-a11be435a766",
+    "bfb8387e-168e-4065-8780-a2e825919f04",
+    "d0981f63-a84e-4e16-be30-9557b81f2f84",
+    "5870ac58-a281-40c5-af91-6904a42d5dfd"
+  ]
+}
