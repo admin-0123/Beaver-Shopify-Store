@@ -4,142 +4,116 @@
 
 {%- style -%}
   .section-{{ section.id }}-padding {
-    padding-top: {{ section.settings.padding_top | times: 0.75 | round: 0 }}px;
-    padding-bottom: {{ section.settings.padding_bottom | times: 0.75 | round: 0 }}px;
+    padding-top: {{ section.settings.padding_top | times: 0.75 | round: 0 }}
+    px;
+    padding-bottom: {{ section.settings.padding_bottom | times: 0.75 | round: 0 }}
+    px;
   }
-
+  .main-blog-title {
+    font-family: Tiempos Headline;
+    font-size: 54px;
+    font-weight: 700;
+    line-height: 65px;
+    letter-spacing: 0;
+    text-align: left;
+    padding-bottom: 35px;
+  }
+  @media screen and (max-width: 749px) {
+    .main-blog-title {
+      font-family: Tiempos Headline;
+      font-size: 42px;
+      font-weight: 700;
+      line-height: 50px;
+      letter-spacing: 0;
+      text-align: left;
+      padding-bottom: 0;
+    }
+  }
+  .blog-category {
+    font-family: Poppins;
+    font-size: 16px;
+    font-weight: 600;
+    line-height: 24px;
+    letter-spacing: 0;
+    text-align: left;
+    color: #58565C;
+    padding-left: 0;
+  }
+  .blog-category-header {
+    font-family: Poppins;
+    font-size: 18px;
+    font-weight: 700;
+    line-height: 27px;
+    letter-spacing: 0;
+    text-align: left;
+    color: #191919;
+  }
   @media screen and (min-width: 750px) {
     .section-{{ section.id }}-padding {
-      padding-top: {{ section.settings.padding_top }}px;
-      padding-bottom: {{ section.settings.padding_bottom }}px;
+      padding-top: {{ section.settings.padding_top }}
+      px;
+      padding-bottom: {{ section.settings.padding_bottom }}
+      px;
     }
   }
 {%- endstyle -%}
 
-{%- paginate blog.articles by 6 -%}
-  <div class="main-blog page-width section-{{ section.id }}-padding">
-    <h1 class="title--primary">{{ blog.title | escape }}</h1>
-
-    <div class="blog-articles {% if section.settings.layout == 'collage' %}blog-articles--collage{% endif %}">
-      {%- for article in blog.articles -%}
-        <div class="blog-articles__article article">
-          {%- render 'article-card',
-            article: article,
-            media_height: section.settings.image_height,
-            media_aspect_ratio: article.image.aspect_ratio,
-            show_image: section.settings.show_image,
-            show_date: section.settings.show_date,
-            show_author: section.settings.show_author,
-            show_excerpt: true
-          -%}
-        </div>
-      {%- endfor -%}
+<div class="container blog-news">
+  <div class="row mt-5">
+    <div class="col-sm-3 category small-hide">
+      <p class="blog-category-header">Category</p>
+      <nav class="nav flex-column">
+        <a class="nav-link blog-category" href="#">Chocolate Delights</a>
+        <a class="nav-link blog-category" href="#">Facts & Curiosities</a>
+        <a class="nav-link blog-category" href="#">Health</a>
+        <a class="nav-link blog-category" href="#">Around the World</a>
+        <a class="nav-link blog-category" href="#">Product</a>
+        <a class="nav-link blog-category" href="#">Education</a>
+        <a class="nav-link blog-category" href="#">Company</a>
+        <a class="nav-link blog-category" href="#">Beaver Charity</a>
+        <a class="nav-link blog-category" href="#">Worldwide Tastes</a>
+      </nav>
     </div>
-
-    {%- if paginate.pages > 1 -%}
-      {%- render 'pagination', paginate: paginate -%}
-    {%- endif -%}
+    <div class="col-12 col-sm-9 blog-lists">
+      <h1 class="main-blog-title">{{ section.settings.title }}</h1>
+      {%- paginate blog.articles by section.settings.blogs_per_page -%}
+        <div class="row gx-4 gy-6">
+          {%- for article in blog.articles -%}
+            <div class="blog-article col-12 col-sm-4">
+              {%- render 'article-card', article: article -%}
+            </div>
+          {%- endfor -%}
+        </div>
+        {%- if paginate.pages > 1 -%}
+          {%- render 'pagination', paginate: paginate -%}
+        {%- endif -%}
+      {%- endpaginate -%}
+    </div>
   </div>
-{%- endpaginate -%}
+</div>
+
+
 
 {% schema %}
-{
-  "name": "t:sections.main-blog.name",
-  "tag": "section",
-  "class": "section",
-  "settings": [
-    {
-      "type": "header",
-      "content": "t:sections.main-blog.settings.header.content"
-    },
-    {
-      "type": "select",
-      "id": "layout",
-      "options": [
-        {
-          "value": "grid",
-          "label": "t:sections.main-blog.settings.layout.options__1.label"
-        },
-        {
-          "value": "collage",
-          "label": "t:sections.main-blog.settings.layout.options__2.label"
-        }
-      ],
-      "default": "collage",
-      "label": "t:sections.main-blog.settings.layout.label",
-      "info": "t:sections.main-blog.settings.layout.info"
-    },
-    {
-      "type": "checkbox",
-      "id": "show_image",
-      "default": true,
-      "label": "t:sections.main-blog.settings.show_image.label"
-    },
-    {
-      "type": "select",
-      "id": "image_height",
-      "options": [
-        {
-          "value": "adapt",
-          "label": "t:sections.main-blog.settings.image_height.options__1.label"
-        },
-        {
-          "value": "small",
-          "label": "t:sections.main-blog.settings.image_height.options__2.label"
-        },
-        {
-          "value": "medium",
-          "label": "t:sections.main-blog.settings.image_height.options__3.label"
-        },
-        {
-          "value": "large",
-          "label": "t:sections.main-blog.settings.image_height.options__4.label"
-        }
-      ],
-      "default": "medium",
-      "label": "t:sections.main-blog.settings.image_height.label",
-      "info": "t:sections.main-blog.settings.image_height.info"
-    },
-    {
-      "type": "checkbox",
-      "id": "show_date",
-      "default": true,
-      "label": "t:sections.main-blog.settings.show_date.label"
-    },
-    {
-      "type": "checkbox",
-      "id": "show_author",
-      "default": false,
-      "label": "t:sections.main-blog.settings.show_author.label"
-    },
-    {
-      "type": "paragraph",
-      "content": "t:sections.main-blog.settings.paragraph.content"
-    },
-    {
-      "type": "header",
-      "content": "t:sections.all.padding.section_padding_heading"
-    },
-    {
-      "type": "range",
-      "id": "padding_top",
-      "min": 0,
-      "max": 100,
-      "step": 4,
-      "unit": "px",
-      "label": "t:sections.all.padding.padding_top",
-      "default": 36
-    },
-    {
-      "type": "range",
-      "id": "padding_bottom",
-      "min": 0,
-      "max": 100,
-      "step": 4,
-      "unit": "px",
-      "label": "t:sections.all.padding.padding_bottom",
-      "default": 36
-    }
-  ]
-}
+  {
+    "name": "t:sections.main-blog.name",
+    "tag": "section",
+    "class": "section",
+    "settings": [
+      {
+        "type": "text",
+        "id": "title",
+        "label": "Title",
+        "default": "Beaver Magazine"
+      }, {
+        "type": "range",
+        "id": "blogs_per_page",
+        "label": "Blogs per Page",
+        "min": 1,
+        "max": 30,
+        "step": 1,
+        "default": 9
+      }
+    ]
+  }
 {% endschema %}

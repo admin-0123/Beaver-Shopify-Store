@@ -2,80 +2,63 @@
   "name": "t:sections.footer.name",
   "type": "footer",
   "sections": {
-    "b08da6c4-e852-4dc2-9b8d-bf415b007bb0": {
-      "type": "newsletter",
-      "blocks": {
-        "sections--18617704907041__b08da6c4-e852-4dc2-9b8d-bf415b007bb0-16844374749b5edb7a-0": {
-          "type": "heading",
-          "settings": {
-            "heading": "<strong>Get 10% OFF your first Order<\/strong>",
-            "heading_size": "h2"
-          }
-        },
-        "sections--18617704907041__b08da6c4-e852-4dc2-9b8d-bf415b007bb0-16844374749b5edb7a-1": {
-          "type": "paragraph",
-          "settings": {
-            "text": "<p>Save 10% on your first order by and get notified about the latest news and updates. No spam, we promise!<\/p>"
-          }
-        },
-        "sections--18617704907041__b08da6c4-e852-4dc2-9b8d-bf415b007bb0-16844374749b5edb7a-2": {
-          "type": "email_form",
-          "settings": {
-          }
-        }
-      },
-      "block_order": [
-        "sections--18617704907041__b08da6c4-e852-4dc2-9b8d-bf415b007bb0-16844374749b5edb7a-0",
-        "sections--18617704907041__b08da6c4-e852-4dc2-9b8d-bf415b007bb0-16844374749b5edb7a-1",
-        "sections--18617704907041__b08da6c4-e852-4dc2-9b8d-bf415b007bb0-16844374749b5edb7a-2"
-      ],
-      "settings": {
-        "color_scheme": "inverse",
-        "full_width": true,
-        "padding_top": 40,
-        "padding_bottom": 16
-      }
-    },
     "footer": {
       "type": "footer",
       "blocks": {
-        "1eb11a7d-3e0d-456b-8ead-78162f41f4a5": {
+        "0b31c7ed-101a-4f4a-9a23-9fb6f68b101a": {
+          "type": "image",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/Beaver_Treats_-_Logo_Vertical_1.svg",
+            "image_width": 210,
+            "logo_desc": "We strive to provide only the highest quality Treats & Snacks online. We stand by our products unconditionally.",
+            "alignment": ""
+          }
+        },
+        "footer-0": {
           "type": "link_list",
           "settings": {
-            "heading": "Quick links",
+            "heading": "<strong>Quick links<\/strong>",
             "menu": "footer"
           }
         },
-        "38b47afb-0875-43f7-b70d-7ee5a58e7918": {
+        "footer-1": {
           "type": "link_list",
           "settings": {
-            "heading": "Customer Care",
-            "menu": "customer-care"
+            "heading": "<strong>Info<\/strong>",
+            "menu": "customer-care-footer-menu"
+          }
+        },
+        "footer-2": {
+          "type": "text",
+          "settings": {
+            "heading": "<strong>Get In Touch<\/strong>",
+            "subtext": "<p><strong>Beaver Treats<\/strong><br\/>Marion County 4002<br\/>Yellville, Arkansas (AR), 72687<br\/><br\/><strong>contact@beavertreats.com<br\/>(870) 449-6267<\/strong><\/p>"
           }
         }
       },
       "block_order": [
-        "1eb11a7d-3e0d-456b-8ead-78162f41f4a5",
-        "38b47afb-0875-43f7-b70d-7ee5a58e7918"
+        "0b31c7ed-101a-4f4a-9a23-9fb6f68b101a",
+        "footer-0",
+        "footer-1",
+        "footer-2"
       ],
       "settings": {
         "color_scheme": "inverse",
-        "newsletter_enable": false,
+        "newsletter_enable": true,
         "newsletter_heading": "",
-        "enable_follow_on_shop": false,
+        "enable_follow_on_shop": true,
         "show_social": true,
-        "enable_country_selector": true,
-        "enable_language_selector": true,
+        "enable_country_selector": false,
+        "enable_language_selector": false,
         "payment_enable": true,
         "show_policy": false,
-        "margin_top": 0,
+        "margin_top": 48,
         "padding_top": 36,
         "padding_bottom": 36
       }
     }
   },
   "order": [
-    "b08da6c4-e852-4dc2-9b8d-bf415b007bb0",
     "footer"
   ]
 }

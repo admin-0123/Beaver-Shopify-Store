@@ -10,12 +10,19 @@
     padding-top: {{ section.settings.padding_top | times: 0.75 | round: 0 }}px;
     padding-bottom: {{ section.settings.padding_bottom | times: 0.75 | round: 0 }}px;
   }
-
   @media screen and (min-width: 750px) {
     .section-{{ section.id }}-padding {
       padding-top: {{ section.settings.padding_top }}px;
       padding-bottom: {{ section.settings.padding_bottom }}px;
     }
+  }
+  table {
+    font-family: Tiempos Headline;
+    font-size: 20px;
+    font-weight: 700;
+    line-height: 24px;
+    letter-spacing: 0em;
+    text-align: center;
   }
 {%- endstyle -%}
 
@@ -23,7 +30,7 @@
   <script src="{{ 'cart.js' | asset_url }}" defer="defer"></script>
 {%- endunless -%}
 
-<cart-items class="page-width{% if cart == empty %} is-empty{% else %} section-{{ section.id }}-padding{% endif %}">
+<cart-items class="container page-width{% if cart == empty %} is-empty{% else %} section-{{ section.id }}-padding{% endif %}">
   <div class="title-wrapper-with-link">
     <h1 class="title title--primary">{{ 'sections.cart.title' | t }}</h1>
     <a href="{{ routes.all_products_collection_url }}" class="underlined-link">{{ 'general.continue_shopping' | t }}</a>
@@ -53,13 +60,13 @@
             </caption>
             <thead>
               <tr>
-                <th class="caption-with-letter-spacing" colspan="2" scope="col">
+                <th class="caption-with-letter-spacing border-end" colspan="2" scope="col">
                   {{ 'sections.cart.headings.product' | t }}
                 </th>
-                <th class="medium-hide large-up-hide right caption-with-letter-spacing" colspan="1" scope="col">
+                <th class="medium-hide large-up-hide right caption-with-letter-spacing border-end" colspan="1" scope="col">
                   {{ 'sections.cart.headings.total' | t }}
                 </th>
-                <th class="cart-items__heading--wide small-hide caption-with-letter-spacing" colspan="1" scope="col">
+                <th class="cart-items__heading--wide small-hide caption-with-letter-spacing border-end" colspan="1" scope="col">
                   {{ 'sections.cart.headings.quantity' | t }}
                 </th>
                 <th class="small-hide right caption-with-letter-spacing" colspan="1" scope="col">
@@ -70,7 +77,7 @@
 
             <tbody>
               {%- for item in cart.items -%}
-                <tr class="cart-item" id="CartItem-{{ item.index | plus: 1 }}">
+                <tr class="cart-item border-bottom" id="CartItem-{{ item.index | plus: 1 }}">
                   <td class="cart-item__media">
                     {% if item.image %}
                       {% comment %} Leave empty space due to a:empty CSS display: none rule {% endcomment %}
@@ -88,7 +95,7 @@
                     {% endif %}
                   </td>
 
-                  <td class="cart-item__details">
+                  <td class="cart-item__details border-end">
                     {%- if settings.show_vendor -%}
                       <p class="caption-with-letter-spacing">{{ item.product.vendor }}</p>
                     {%- endif -%}
@@ -162,7 +169,7 @@
                     </ul>
                   </td>
 
-                  <td class="cart-item__totals right medium-hide large-up-hide">
+                  <td class="cart-item__totals right medium-hide large-up-hide border-end">
                     <div class="loading-overlay hidden">
                       <div class="loading-overlay__spinner">
                         <svg
@@ -217,7 +224,7 @@
                     </div>
                   </td>
 
-                  <td class="cart-item__quantity">
+                  <td class="cart-item__quantity border-end">
                     <div class="cart-item__quantity-wrapper">
                       <label class="visually-hidden" for="Quantity-{{ item.index | plus: 1 }}">
                         {{ 'products.product.quantity.label' | t }}
@@ -235,14 +242,12 @@
                           type="number"
                           name="updates[]"
                           value="{{ item.quantity }}"
-                          {% # theme-check-disable %}
                           data-cart-quantity="{{ cart | item_count_for_variant: item.variant.id }}"
                           min="{{ item.variant.quantity_rule.min }}"
                           {% if item.variant.quantity_rule.max != null %}
                             max="{{ item.variant.quantity_rule.max }}"
                           {% endif %}
                           step="{{ item.variant.quantity_rule.increment }}"
-                          {% # theme-check-enable %}
                           aria-label="{{ 'products.product.quantity.input_label' | t: product: item.product.title | escape }}"
                           id="Quantity-{{ item.index | plus: 1 }}"
                           data-index="{{ item.index | plus: 1 }}"

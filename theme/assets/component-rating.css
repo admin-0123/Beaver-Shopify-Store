@@ -9,8 +9,8 @@
 }
 
 .card-wrapper .rating-star {
-  --letter-spacing: 0.7;
-  --font-size: 1.4;
+  --letter-spacing: 0.5;
+  --font-size: 1.8;
 }
 
 .rating-star {
@@ -33,7 +33,7 @@
   content: '★★★★★';
   background: linear-gradient(
     90deg,
-    var(--color-icon) var(--percent),
+    #14aa7e var(--percent),
     rgba(var(--color-foreground), 0.15) var(--percent)
   );
   -webkit-background-clip: text;
@@ -47,6 +47,15 @@
 .rating-count {
   display: inline-block;
   margin: 0;
+}
+.rating-count span {
+  font-family: Poppins;
+  font-size: 14px;
+  font-weight: 600;
+  line-height: 21px;
+  letter-spacing: 0em;
+  text-align: left;
+  color: #000000;
 }
 
 @media (forced-colors: active) {

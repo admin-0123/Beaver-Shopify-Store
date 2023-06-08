@@ -20,7 +20,39 @@
 
 .price .price-item {
   display: inline-block;
-  margin: 0 1rem 0 0;
+  margin: 0;
+}
+
+.price-item--regular {
+  /* $209 */
+
+    font-family: 'Tiempos Headline';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 16px;
+    line-height: 19px;
+    text-decoration-line: line-through;
+
+    /* Content Soft */
+    color: #58565C !important;
+
+    opacity: 0.6;
+
+}
+
+.price-item--sale {
+  /* $48.00 */
+
+    /* H5 - 20pt Bold */
+    font-family: 'Tiempos Headline';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 20px;
+    line-height: 24px;
+    /* identical to box height */
+
+    /* Main Content */
+    color: #191919;
 }
 
 .price__regular .price-item--regular {

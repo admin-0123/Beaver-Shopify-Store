@@ -1,14 +1,13 @@
 {
   "sections": {
+    "27f93710-092b-4a44-9bb1-13858a45d941": {
+      "type": "main-breadcrumb",
+      "settings": {
+      }
+    },
     "main": {
       "type": "main-article",
       "blocks": {
-        "featured_image": {
-          "type": "featured_image",
-          "settings": {
-            "image_height": "adapt"
-          }
-        },
         "title": {
           "type": "title",
           "settings": {
@@ -23,33 +22,23 @@
         }
       },
       "block_order": [
-        "featured_image",
         "title",
         "content"
       ],
       "settings": {
       }
     },
-    "52039be9-e74e-400c-90c4-940cd9c1396d": {
+    "13b3122a-391a-489f-a450-865dc515a960": {
       "type": "featured-blog",
       "settings": {
-        "heading": "<strong>Related Articles<\/strong>",
-        "heading_size": "h0",
-        "blog": "news",
-        "post_limit": 4,
-        "columns_desktop": 4,
-        "color_scheme": "accent-1",
-        "show_image": true,
-        "show_date": true,
-        "show_author": false,
-        "show_view_all": true,
-        "padding_top": 36,
-        "padding_bottom": 36
+        "title": "Beaver Magazine",
+        "number_of_blogs": 8
       }
     }
   },
   "order": [
+    "27f93710-092b-4a44-9bb1-13858a45d941",
     "main",
-    "52039be9-e74e-400c-90c4-940cd9c1396d"
+    "13b3122a-391a-489f-a450-865dc515a960"
   ]
 }

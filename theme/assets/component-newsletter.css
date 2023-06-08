@@ -1,17 +1,34 @@
 .newsletter-form {
   display: flex;
-  flex-direction: column;
   justify-content: center;
   align-items: center;
   width: 100%;
   position: relative;
+}
+.footer-desc {
+  text-align: left;
+}
+.footer-block__newsletter {
+  margin-bottom: 10rem;
 }
 
 @media screen and (min-width: 750px) {
   .newsletter-form {
     align-items: flex-start;
     margin: 0 auto;
-    max-width: 36rem;
+  }
+}
+
+@media screen and (max-width: 749px) {
+  .newsletter-form {
+    flex-flow: column;
+    gap: 15px;
+  }
+  .footer-desc {
+    text-align: center;
+  }
+  .footer-block__newsletter {
+    margin-bottom: 5rem;
   }
 }
 

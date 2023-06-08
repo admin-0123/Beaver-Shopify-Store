@@ -8,6 +8,8 @@
 .card {
   text-decoration: none;
   text-align: var(--text-alignment);
+  border: none;
+  background-color: transparent;
 }
 
 .card:not(.ratio) {
@@ -79,6 +81,7 @@
 
 .card-information {
   text-align: var(--text-alignment);
+  margin-top: 15px;
 }
 
 .card__media,
@@ -94,7 +97,11 @@
 
 .card__media {
   margin: var(--image-padding);
-  width: calc(100% - 2 * var(--image-padding));
+  width: 100% !important;
+}
+
+.card__media .media {
+  position: static !important;
 }
 
 .card--standard .card__media {
@@ -103,6 +110,7 @@
 
 .card__inner {
   width: 100%;
+  background-color: transparent;
 }
 
 .card--media .card__inner .card__content {
@@ -124,7 +132,7 @@
 
 .card__information {
   grid-row-start: 2;
-  padding: 1.3rem 1rem;
+  padding: 0rem 1rem 1.2rem 1rem;
 }
 
 .card:not(.ratio) > .card__content {
@@ -162,6 +170,7 @@
   object-fit: cover;
   object-position: center center;
   width: 100%;
+  position: static !important;
 }
 
 .card__inner:not(.ratio) > .card__content {

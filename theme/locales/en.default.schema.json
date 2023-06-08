@@ -437,6 +437,18 @@
         "options__4": {
           "label": "Extra large"
         }
+      },
+      "heading_position": {
+        "label": "Heading position",
+        "options__1": {
+          "label": "Left"
+        },
+        "options__2": {
+          "label": "Center"
+        },
+        "options__3": {
+          "label": "Right"
+        }
       }
     },
     "announcement-bar": {
@@ -677,6 +689,9 @@
       "settings": {
         "title": {
           "label": "Heading"
+        },
+        "product_counts": {
+          "label": "Number of Products"
         },
         "description": {
           "label": "Description"
@@ -1115,9 +1130,6 @@
       "settings": {
         "image": {
           "label": "First image"
-        },
-        "image_2": {
-          "label": "Second image"
         },
         "image_overlay_opacity": {
           "label": "Image overlay opacity"

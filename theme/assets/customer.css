@@ -1,14 +1,18 @@
 .customer:not(.account):not(.order) {
   margin: 0 auto;
   max-width: 33.4rem;
-  padding-left: 1.5rem;
-  padding-right: 1.5rem;
-  text-align: center;
+  /* padding-left: 1.5rem; */
+  /* padding-right: 1.5rem; */
 }
-
+.account-mobile-logo {
+  width: 120%;
+  margin-left: -10%;
+}
 @media screen and (min-width: 750px) {
   .customer:not(.account):not(.order) {
     max-width: 47.8rem;
+    padding-left: 1.5rem;
+    padding-right: 1.5rem;
   }
 }
 
@@ -233,7 +237,13 @@
   .customer tfoot td:first-of-type {
     display: none;
   }
-
+  .customer-account-feed {
+    padding-top: 25px;
+  }
+  .customer-account {
+    margin-top: 0px !important;
+    overflow:hidden;
+  }
   .customer td {
     display: flex;
     text-align: right;
@@ -259,6 +269,16 @@
     flex-direction: column;
     justify-content: flex-start;
     width: 100%;
+  }
+  .account-dashboard-title {
+    font-size: 42px !important;
+    font-weight: 700 !important;
+    line-height: 50px !important;
+    letter-spacing: 0em !important;
+    text-align: left !important;
+  }
+  .account-dashboard-desc {
+    font-size: 14px !important;
   }
 }
 
@@ -331,7 +351,6 @@
 /* Login */
 .login a {
   display: block;
-  margin: 0 auto;
   width: fit-content;
 }
 
@@ -359,31 +378,17 @@
 }
 
 #recover,
-#recover + div {
-  display: none;
-}
-
-#recover:target {
-  display: block;
-}
-
-#recover:target + div {
-  display: block;
-}
-
-#recover:target ~ #login,
-#recover:target ~ #login + div {
-  display: none;
-}
-
-#recover,
 #login {
   scroll-margin-top: 20rem;
+  margin-top: 50px;
+  font-family: Tiempos Headline;
+  font-size: 54px;
+  font-weight: 700;
+  line-height: 65px;
+  letter-spacing: 0em;
+  text-align: left;
 }
 
-#recover {
-  margin-bottom: 0;
-}
 
 .activate button[name='decline'],
 .addresses li > button,
@@ -752,4 +757,64 @@ li[data-address] > h2 {
 .addresses form > div:nth-of-type(7),
 .addresses form > div:nth-of-type(7) + div[id] {
   margin-top: 1.5rem;
+}
+
+.customer-account-item {
+  border-width: 0 0 2px 0 !important;
+  border-style: solid !important;
+  border-color: #191919 !important;
+}
+
+.customer-forgot {
+  font-family: Poppins;
+  font-size: 16px;
+  font-weight: 600;
+  line-height: 24px;
+  letter-spacing: 0em;
+  text-align: left;
+  color: #FA285A !important;
+}
+.customer-login-t {
+  font-family: Poppins;
+  font-size: 18px;
+  font-weight: 700;
+  line-height: 27px;
+  letter-spacing: 0em;
+  text-align: left;
+  color: #191919;
+}
+.customer-login-btn, .customer-login-btn p{
+  font-family: Poppins !important;
+  font-size: 18px !important;
+  font-weight: 700 !important;
+  line-height: 27px !important;
+  letter-spacing: 0em !important;
+  text-align: left !important;
+  color: #191919 !important;
+}
+.customer-register-t {
+  font-family: Poppins;
+  font-size: 16px;
+  font-weight: 600;
+  line-height: 24px;
+  letter-spacing: 0em;
+  text-align: left;
+  color: #191919;
+  margin-bottom: 50px !important;
+}
+.main-login, .main-register {
+  overflow: hidden;
+}
+@media screen and (max-width: 749px) {
+  .login-back {
+    width: 120%;
+    margin-left: -10%;
+  }
+  #login {
+    margin-top: 5px;
+  }
+}
+
+.recovery-cancel {
+  text-decoration: underline !important;
 }

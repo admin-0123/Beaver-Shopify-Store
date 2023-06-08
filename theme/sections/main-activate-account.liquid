@@ -32,9 +32,7 @@
   {%- form 'activate_customer_password' -%}
     {%- if form.errors -%}
       <h2 class="form__message" tabindex="-1" autofocus>
-        <svg aria-hidden="true" focusable="false">
-          <use href="#icon-error" />
-        </svg>
+        {%- render 'icon-bubble' -%}
         {{ 'templates.contact.form.error_heading' | t }}
       </h2>
       <ul>

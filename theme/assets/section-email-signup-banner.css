@@ -44,11 +44,11 @@
   }
 
   .banner--desktop-transparent .email-signup-banner__box .field__input {
-    background-color: transparent;
+    /* background-color: transparent; */
   }
 
   .banner--desktop-transparent .email-signup-banner__box--no-image .field__input {
-    box-shadow: 0 0 0 0.1rem rgba(var(--color-base-text), 0.55);
+    /* box-shadow: 0 0 0 0.1rem rgba(var(--color-base-text), 0.55); */
   }
 
   .banner--desktop-transparent .email-signup-banner__box--no-image .field__input:focus {
