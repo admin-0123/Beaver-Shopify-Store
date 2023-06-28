@@ -114,14 +114,8 @@
 
     <div class="container {% if section.settings.filter_type == 'vertical' %} facets-vertical page-width{% endif %}">
       {{ 'component-facets.css' | asset_url | stylesheet_tag }}
-      <script src="{{ 'facets.js' | asset_url }}" defer="defer"></script>
-      {%- if section.settings.enable_filtering or section.settings.enable_sorting -%}
-        <aside
-          aria-labelledby="verticalTitle"
-          class="facets-wrapper{% unless section.settings.enable_filtering %} facets-wrapper--no-filters{% endunless %}{% if section.settings.filter_type != 'vertical' %} page-width{% endif %}"
-          id="main-collection-filters"
-          data-id="{{ section.id }}"
-        >
+      <div class="row">
+        <div class="col-12 col-md-3">
           {% render 'facets',
             results: collection,
             enable_filtering: section.settings.enable_filtering,
@@ -129,11 +123,11 @@
             filter_type: section.settings.filter_type,
             paginate: paginate
           %}
-        </aside>
-      {%- endif -%}
-      <div class="row">
-        {%- for product in collection.products -%}
-          <div class="product col-6 col-sm-6 col-md-4">
+        </div>
+        <div class="col-12 col-md-9">
+          <div class="row">
+            {%- for product in collection.products -%}
+              <div class="product col-6 col-sm-6 col-md-4">
                 <div class="card">
                   {% render 'card-product',
                     card_product: product,
@@ -145,18 +139,36 @@
                     show_quick_add: section.settings.enable_quick_add,
                     section_id: section.id
                   %}
-                  </div>    
-                  </div>
-              {%- endfor -%}
+                </div>    
+              </div>
+            {%- endfor -%}
 
             {%- if paginate.pages > 1 -%}
               {% render 'pagination', paginate: paginate, anchor: '' %}
             {%- endif -%}
+          </div>
+        </div>
       </div>
-      </div>
+    </div>
+    <div class="container create-box-modal" style="display: none;">
+      {% render 'create-box-modal' %}
+    </div>
     </div>
   {%- endpaginate -%}
 </div>
+
+<script>
+  $(document).ready(function() {
+    var bundleGroup = JSON.parse(localStorage.getItem("bundleGroup") || "[]")
+    if(!bundleGroup.length) localStorage.bundleGroup = "[]"
+    $(".create-box-modal").hide()
+    let boxInterval = setInterval(checkCreateBox, 100)
+    function checkCreateBox() {
+      if(localStorage.bundleGroup != "[]")
+        $(".create-box-modal").show(500);
+    }
+  })
+</script>
 
 {% schema %}
 {

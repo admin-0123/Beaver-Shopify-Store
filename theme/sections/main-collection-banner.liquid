@@ -67,31 +67,20 @@
   }
 {%- endstyle -%}
 
-<div
-  class="container CollectionTabs d-flex"
-  style="gap: 10px">
-  <a
-    href="/collections/all"
-    class="{% if section.settings.active == 1 %} ThreeD--button pre-made-button tab-button text-white {% else %} ThreeD--button PinkShadow {% endif %}">Pre-made Boxes</a>
-  <a
-    href="/collections/create-your-box"
-    class="{% if section.settings.active == 2 %} ThreeD--button pre-made-button tab-button text-white {% else %} ThreeD--button PinkShadow {% endif %}">Create Your Box</a>
+<div class="container CollectionTabs d-flex" style="gap: 10px">
+  <a href="/collections/all" class="{% if section.settings.active == 1 %} ThreeD--button pre-made-button tab-button text-white {% else %} ThreeD--button PinkShadow {% endif %}">Pre-made Boxes</a>
+  <a href="/collections/create-your-box" class="{% if section.settings.active == 2 %} ThreeD--button pre-made-button tab-button text-white {% else %} ThreeD--button PinkShadow {% endif %}">Create Your Box</a>
 </div>
 
-<div
-  class="collection-hero{% if section.settings.show_collection_image and collection.image %} collection-hero--with-image{% endif %} color-{{ section.settings.color_scheme }} gradient">
-  <div
-    class="container collection-hero__inner row mx-0 px-0">
-    <div
-      class="collection-hero__text-wrapper col-12 col-sm-6">
-      <h1
-        class="collection-hero__title">
+<div class="collection-hero{% if section.settings.show_collection_image and collection.image %} collection-hero--with-image{% endif %} color-{{ section.settings.color_scheme }} gradient">
+  <div class="container collection-hero__inner row mx-auto px-0">
+    <div class="collection-hero__text-wrapper col-12 col-sm-6">
+      <h1 class="collection-hero__title">
         {{ section.settings.title }}
       </h1>
       <p>{{ section.settings.description }}</p>
     </div>
-    <div
-      class="col-12 col-sm-6 h-100">
+    <div class="col-12 col-sm-6 h-100">
       <img
         src={{ section.settings.image | image_url }}
         alt="banner image"

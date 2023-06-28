@@ -66,7 +66,7 @@
                 src="{{ card_product.featured_media | image_url: width: 533 }}"
                 sizes="(min-width: {{ settings.page_width }}px) {{ settings.page_width | minus: 130 | divided_by: 4 }}px, (min-width: 990px) calc((100vw - 130px) / 4), (min-width: 750px) calc((100vw - 120px) / 3), calc((100vw - 35px) / 2)"
                 alt="{{ card_product.featured_media.alt | escape }}"
-                class="motion-reduce"
+                class="motion-reduce card__product_image"
                 {% unless lazy_load == false %}
                   loading="lazy"
                 {% endunless %}
@@ -284,9 +284,10 @@
                     value="{{ card_product.selected_or_first_available_variant.id }}"
                     disabled
                   >
-                  <button
-                    id="{{ product_form_id }}-submit"
-                    type="submit"
+                  {% comment %} id="{{ product_form_id }}-submit"
+                  type="submit" {% endcomment %}
+                  <button type="button" class="btn_add_to_box button button--primary w-100" onclick='handleBox({{ card_product | json }})'>Add to box</button>
+                  {% comment %} <button
                     name="add"
                     class="quick-add__submit button button--full-width button--secondary{% if horizontal_quick_add %} card--horizontal__quick-add{% endif %}"
                     aria-haspopup="dialog"
@@ -296,10 +297,11 @@
                     {% if card_product.selected_or_first_available_variant.available == false %}
                       disabled
                     {% endif %}
+                    onclick="handleBox()"
                   >
                     <span>
                       {%- if card_product.selected_or_first_available_variant.available -%}
-                        {{ 'products.product.add_to_cart' | t }}
+                        Add To Box
                       {%- else -%}
                         {{ 'products.product.sold_out' | t }}
                       {%- endif -%}
@@ -321,7 +323,7 @@
                         <circle class="path" fill="none" stroke-width="6" cx="33" cy="33" r="30"></circle>
                       </svg>
                     </div>
-                  </button>
+                  </button> {% endcomment %}
                 {%- endform -%}
               </product-form>
             {%- endif -%}
@@ -394,6 +396,27 @@
     </div>
   </div>
 {%- endif -%}
+
+<script>
+  var bundleGroup = JSON.parse(localStorage.getItem("bundleGroup") || "[]");
+  var productGroup = JSON.parse(localStorage.getItem("productGroup") || "[]");
+  function handleBox(product) {
+    if(bundleGroup.findIndex(el => el.id == product.variants[0].id)>-1)
+    {
+      let index = bundleGroup.findIndex(el => el.id == product.id);
+      productGroup[index].quantity++;
+    }
+    else {
+      bundleGroup.push(product)
+      productGroup.push({
+        id: product.variants[0].id,
+        quantity: 1
+      })
+    }
+    localStorage.setItem("bundleGroup", JSON.stringify(bundleGroup));
+    localStorage.setItem("productGroup", JSON.stringify(productGroup));
+  }
+</script>
 
 <style>
   .card__heading {

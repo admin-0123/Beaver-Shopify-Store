@@ -7,13 +7,17 @@
 
 {%- style -%}
   .section-{{ section.id }}-padding {
-    padding-top: {{ section.settings.padding_top | times: 0.75 | round: 0 }}px;
-    padding-bottom: {{ section.settings.padding_bottom | times: 0.75 | round: 0 }}px;
+    padding-top: {{ section.settings.padding_top | times: 0.75 | round: 0 }}
+    px;
+    padding-bottom: {{ section.settings.padding_bottom | times: 0.75 | round: 0 }}
+    px;
   }
   @media screen and (min-width: 750px) {
     .section-{{ section.id }}-padding {
-      padding-top: {{ section.settings.padding_top }}px;
-      padding-bottom: {{ section.settings.padding_bottom }}px;
+      padding-top: {{ section.settings.padding_top }}
+      px;
+      padding-bottom: {{ section.settings.padding_bottom }}
+      px;
     }
   }
   table {
@@ -21,8 +25,75 @@
     font-size: 20px;
     font-weight: 700;
     line-height: 24px;
-    letter-spacing: 0em;
+    letter-spacing: 0;
     text-align: center;
+  }
+  #cart_box h1 {
+    font-family: Tiempos Headline;
+    font-size: 34px;
+    font-weight: 700;
+    line-height: 41px;
+    letter-spacing: 0;
+    text-align: left;
+    padding-bottom: 10px;
+  }
+  #cart_box p {
+    font-family: Poppins;
+    font-size: 16px;
+    font-weight: 600;
+    line-height: 24px;
+    letter-spacing: 0;
+    text-align: left;
+    margin-bottom: 0;
+  }
+  #cart_box h6 {
+    font-family: Poppins;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 24px;
+    letter-spacing: 0;
+    text-align: left;
+    margin: 0;
+  }
+  #cart_box li {
+    border-bottom: 1px solid #58565C1A;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  #cart_product h1 {
+    font-family: Tiempos Headline;
+    font-size: 34px;
+    font-weight: 700;
+    line-height: 41px;
+    letter-spacing: 0;
+    text-align: left;
+    padding-bottom: 10px;
+  }
+  .count-box button {
+    width: 42px;
+    height: 42px;
+    background-color: #e6c8eb !important;
+    border: none;
+  }
+  .count-box input {
+    width: 42px;
+    height: 42px;
+    border: none;
+    flex-grow: initial;
+    text-align: center;
+  }
+  .count-box input::-webkit-outer-spin-button,
+  .count-box input::-webkit-inner-spin-button {
+    display: none;
+  }
+  .count-box {
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    border: 2px solid #191919;
   }
 {%- endstyle -%}
 
@@ -50,8 +121,15 @@
     {%- endif -%}
   </div>
 
-  <form action="{{ routes.cart_url }}" class="cart__contents critical-hidden" method="post" id="cart">
-    <div class="cart__items" id="main-cart-items" data-id="{{ section.id }}">
+  <form
+    action="{{ routes.cart_url }}"
+    class="cart__contents critical-hidden"
+    method="post"
+    id="cart">
+    <div
+      class="cart__items"
+      id="main-cart-items"
+      data-id="{{ section.id }}">
       <div class="js-contents">
         {%- if cart != empty -%}
           <table class="cart-items">
@@ -60,23 +138,39 @@
             </caption>
             <thead>
               <tr>
-                <th class="caption-with-letter-spacing border-end" colspan="2" scope="col">
+                <th
+                  class="caption-with-letter-spacing border-end"
+                  colspan="1"
+                  scope="col">
                   {{ 'sections.cart.headings.product' | t }}
                 </th>
-                <th class="medium-hide large-up-hide right caption-with-letter-spacing border-end" colspan="1" scope="col">
-                  {{ 'sections.cart.headings.total' | t }}
+                <th
+                  class="right caption-with-letter-spacing border-end"
+                  colspan="1"
+                  scope="col">
+                  {{ 'sections.cart.headings.price' | t }}
                 </th>
-                <th class="cart-items__heading--wide small-hide caption-with-letter-spacing border-end" colspan="1" scope="col">
+                <th
+                  class="cart-items__heading--wide caption-with-letter-spacing border-end"
+                  colspan="1"
+                  scope="col">
                   {{ 'sections.cart.headings.quantity' | t }}
                 </th>
-                <th class="small-hide right caption-with-letter-spacing" colspan="1" scope="col">
+                <th
+                  class="right caption-with-letter-spacing"
+                  colspan="1"
+                  scope="col">
                   {{ 'sections.cart.headings.total' | t }}
                 </th>
               </tr>
             </thead>
 
-            <tbody>
-              {%- for item in cart.items -%}
+            <tbody id="cart_box">
+            </tbody>
+
+            <tbody id="cart_product">
+              
+               {%- for item in cart.items -%}
                 <tr class="cart-item border-bottom" id="CartItem-{{ item.index | plus: 1 }}">
                   <td class="cart-item__media">
                     {% if item.image %}
@@ -334,8 +428,8 @@
                           {{ item.variant.unit_price | money }}
                           <span aria-hidden="true">/</span>
                           <span class="visually-hidden"
-                            >&nbsp;{{ 'accessibility.unit_price_separator' | t }}&nbsp;</span
-                          >
+                            >&nbsp;{{ 'accessibility.unit_price_separator' | t }}&nbsp;
+                          </span>
                           {%- if item.variant.unit_price_measurement.reference_value != 1 -%}
                             {{- item.variant.unit_price_measurement.reference_value -}}
                           {%- endif -%}
@@ -347,46 +441,184 @@
                 </tr>
               {%- endfor -%}
             </tbody>
+
           </table>
         {%- endif -%}
       </div>
     </div>
 
-    <p class="visually-hidden" id="cart-live-region-text" aria-live="polite" role="status"></p>
-    <p class="visually-hidden" id="shopping-cart-line-item-status" aria-live="polite" aria-hidden="true" role="status">
+    <p
+      class="visually-hidden"
+      id="cart-live-region-text"
+      aria-live="polite"
+      role="status"></p>
+    <p
+      class="visually-hidden"
+      id="shopping-cart-line-item-status"
+      aria-live="polite"
+      aria-hidden="true"
+      role="status">
       {{ 'accessibility.loading' | t }}
     </p>
   </form>
 </cart-items>
 
-{% schema %}
-{
-  "name": "t:sections.main-cart-items.name",
-  "settings": [
+<script>
+  
+  var cartItems = {{ cart.items | json }}
+  var productItems = {{ cart.items | json }}
+  console.log(cartItems)
+  // Import the bundle products
+  var boxGroup = JSON.parse(localStorage.getItem("boxGroup") || "[]");
+  console.log(boxGroup)
+  // Handle decrease & increase the box quantity
+  function handleBoxItem(type, id) {
+    let cnt = boxGroup.findIndex((element) => element.id == id)    
+    let productGroup = []
+    let updates = {}
+    if(cnt >= 0)
     {
-      "type": "header",
-      "content": "t:sections.all.padding.section_padding_heading"
-    },
-    {
-      "type": "range",
-      "id": "padding_top",
-      "min": 0,
-      "max": 100,
-      "step": 4,
-      "unit": "px",
-      "label": "t:sections.all.padding.padding_top",
-      "default": 36
-    },
-    {
-      "type": "range",
-      "id": "padding_bottom",
-      "min": 0,
-      "max": 100,
-      "step": 4,
-      "unit": "px",
-      "label": "t:sections.all.padding.padding_bottom",
-      "default": 36
+      if(type == '-') {
+        if(boxGroup[cnt].quantity > 0)
+        {
+          boxGroup[cnt].quantity--;
+          boxGroup[cnt].products.forEach((product, index) => {
+            let cartId = productItems.findIndex((element) => element.product_id == product.id)
+            updates[product.variants[0].id] = (productItems[cartId].quantity - boxGroup[cnt].items[index].quantity)
+          })
+          fetch('/cart/update.js', {
+            method: "post",
+            headers: { 'content-type': 'application/json' },
+            body: JSON.stringify({
+              updates
+            })
+          })
+          .then((res) => {
+            window.location.reload()
+          })
+        }
+      }
+      else if(type == '+') {
+        boxGroup[cnt].products.forEach((product, index) => {
+          productGroup.push({
+            id: product.variants[0].id,
+            quantity: boxGroup[cnt].items[index].quantity
+          })
+        })
+        boxGroup[cnt].quantity++;
+        fetch('/cart/add.js', {
+          method: "post",
+          headers: { 'content-type': 'application/json' },
+          body: JSON.stringify({
+            items: productGroup
+          })
+        })
+        .then((res) => {
+          window.location.reload()
+        })
+      }
+      saveLocalBox();
+      generateBox();
     }
-  ]
-}
+  }
+  function handleBoxProduct(type, id) {
+    alert("product  ")
+  }
+
+  // Remove group products in cart items
+  function handleGroup() {
+    boxGroup.forEach((box, boxIndex) => {
+      if(box.quantity > 0)
+      {
+        box.products.forEach((product, pIndex) => {
+          let quantity = box.items[pIndex].quantity * box.quantity
+          let productId = product.id
+          let cnt = cartItems.findIndex((element) => element.product_id == productId)
+          cartItems[cnt].quantity -= quantity
+        })
+      }
+    })
+  }
+
+  // Add box group in localstorage
+  function saveLocalBox() {
+    let boxTemp = JSON.stringify(boxGroup);
+    localStorage.boxGroup = boxTemp;
+    boxGroup = JSON.parse(localStorage.getItem("boxGroup"));
+  }
+
+  // Generate HTML content for tbody - Box
+  function generateBox() {
+    let tmp = ""
+    boxGroup.forEach((box) => {
+      if(box.quantity > 0)
+      {
+        tmp += '<tr><td><div class="row"><div class="col-3"><img class="w-100" src="https://cdn.shopify.com/s/files/1/0733/7354/8818/files/nobg-IMG_9546_430x.png?v=1686538641#"></div><div class="col-9"><h1>'+box.name+'</h1>';
+        tmp += '<ul>'
+        box.products.forEach((product, index) => {
+          tmp += '<li><p>'+ (index+1) +'.'+ product.title + '</p><h6>x ' + box.items[index].quantity + '</h6></li>'
+        })
+        tmp += '<ul>'
+        tmp += '</div></div></td><td>$ '+ box.price +' </td><td><div class="count-box"><button onclick="handleBoxItem(\'-\', '+ box.id +')">-</button><input type="number" value="' + box.quantity + '" /><button onclick="handleBoxItem(\'+\', '+box.id+')">+</button></div></td><td>$  ' + roundToOneDecimalPlace(box.price * box.quantity) + ' </td></tr>'
+      }
+    })
+    //Put the HTML content in cart box element
+    $("#cart_box").html(tmp)
+    handleGroup()
+  }
+
+  function generateProduct() {
+    let tmp = ""
+    cartItems.forEach((item) => {
+      if(item.quantity > 0)
+      {
+        tmp += '<tr><td><div class="row"><div class="col-3"><img class="w-100" src='+ item.image +'></div><div class="col-9"><h1>'+item.product_title+'</h1>';
+        tmp += '</div></div></td><td>$ '+ roundToOneDecimalPlace(item.price/100) +' </td><td><div class="count-box"><button onclick="handleBoxProduct(\'-\', '+ item.product_id +')">-</button><input type="number" value="' + item.quantity + '" /><button onclick="handleBoxProduct(\'+\', '+item.product_id+')">+</button></div></td><td>$  ' + roundToOneDecimalPlace(item.price/100 * item.quantity) + ' </td></tr>'
+      }
+    })
+    //Put the HTML content in cart box element
+    $("#cart_product").html(tmp)
+  }
+
+  function roundToOneDecimalPlace(number) {
+    return Math.round(number * 100) / 100;
+  }
+
+  $(document).ready(function() {
+
+    // Call Generate Box func
+    generateBox();
+    handleGroup()
+    generateProduct();
+  })
+</script>
+
+{% schema %}
+  {
+    "name": "t:sections.main-cart-items.name",
+    "settings": [
+      {
+        "type": "header",
+        "content": "t:sections.all.padding.section_padding_heading"
+      }, {
+        "type": "range",
+        "id": "padding_top",
+        "min": 0,
+        "max": 100,
+        "step": 4,
+        "unit": "px",
+        "label": "t:sections.all.padding.padding_top",
+        "default": 36
+      }, {
+        "type": "range",
+        "id": "padding_bottom",
+        "min": 0,
+        "max": 100,
+        "step": 4,
+        "unit": "px",
+        "label": "t:sections.all.padding.padding_bottom",
+        "default": 36
+      }
+    ]
+  }
 {% endschema %}
